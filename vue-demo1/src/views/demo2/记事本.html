@@ -38,7 +38,7 @@
       <!-- 统计和清空 -->
       <footer class="footer">
         <span class="todo-count"> <strong>{{array.length}}</strong> items left </span>
-        <button class="clear-completed" @click="clean()">
+        <button v-show="array.length != 0" class="clear-completed" @click="clean()">
           Clear
         </button>
       </footer>
@@ -59,7 +59,7 @@
         var vue = new Vue({
             el:"#todoapp",
             data:{
-                array:["a","b"],
+                array:[],
                 inputValue:""
 
             },
