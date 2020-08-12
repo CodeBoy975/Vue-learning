@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn></cpn>
+</div>
+</body>
+<!--template模板方式-->
+<!--<template id ="cpn">
+  <div>
+    <h2>我是标题</h2>
+    <p>我是内容,呵呵呵</p>
+  </div>
+</template>-->
+
+<!--1.script标签, 注意:类型必须是text/x-template-->
+<script type="text/x-template" id="cpn">
+<div>
+<h2>我是标题</h2>
+<p>我是内容,哈哈哈</p>
+</div>
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  // 注册一个全局组件
+  Vue.component('cpn', {
+    template: "#cpn"
+  });
+ const app = new Vue({
+   el:"#app",
+   data:{}
+ })
+</script>
+</html>
