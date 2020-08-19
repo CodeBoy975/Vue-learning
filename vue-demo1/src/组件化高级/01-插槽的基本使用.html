@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
-
+<!--
+1.插槽的基本使用 <slot></slot>
+2.插槽的默认值 <slot>button</slot>
+3.如果有多个值, 同时放入到组件进行替换时, 一起作为替换元素
+-->
+<div id="app">
+  <myCpn>
+    <h2>我是替换插槽的内容</h2>
+    <p2>我是22替换插槽的内容</p2>
+  </myCpn>
+</div>
 </body>
+
+<template id="myCpn">
+  <slot>我是一个插槽中的默认内容</slot>
+</template>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      isShow: true
+    },
+    components: {
+      myCpn: {
+        template: '#myCpn'
+      }
+    }
+  })
+</script>
 </html>
